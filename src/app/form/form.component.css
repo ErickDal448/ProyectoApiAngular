@@ -1,0 +1,33 @@
+.divForm{
+    width: 70%;
+}
+.divInput{
+    margin-top: 1rem;
+}
+.ErrorDiv{
+    background-color: lemonchiffon;
+    padding-left: 1rem;
+    margin: 0px 5px;
+    border-radius: 0px 0px 10px 10px ;
+}
+.divimgCommerse{
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    background-color: #686f9b;
+}
+.imgCommerse{
+    max-height: 20rem;
+}
+.BtnForm{
+    margin-top: 1rem;
+}
+@media screen and (max-width: 770px){
+    .imgCommerse{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 490px){
+   
+}

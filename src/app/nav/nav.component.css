@@ -1,0 +1,34 @@
+.logoDiv{
+    border: 4px solid grey;
+    border-radius: 50%;
+    background-color: white;
+    overflow: hidden;
+}
+
+.logoImage {
+    width: 100%;
+    height: auto;
+}
+
+.FindSpace{
+    overflow-x: auto;
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.card {
+    flex: 0 0 auto;
+}
+
+.ImgDiv{
+    padding: 1rem 1rem;
+    margin: .5rem .5rem;
+    border: 4px solid grey;
+    border-radius: 360px ;
+    background-color: white;
+}
+
+.itemImg{
+    height: 10rem;
+    padding: 0.5rem;
+}

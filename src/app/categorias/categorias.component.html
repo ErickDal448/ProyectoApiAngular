@@ -1,0 +1,44 @@
+<div  *ngIf="productos.length == 0" style="width: 100%; height: 100vh; background-color: black;"></div>
+<section class="background">
+<section class="mainSec">
+<section class="container" *ngFor="let categoria of categorias; let i = index">
+<div class="card bg-secondary containerDiv" style="color: aliceblue;">
+    <div class="card-header">
+       <h2> {{categoria }}</h2>
+    </div>
+    <div class="card-body" style="background-color: rgb(160, 148, 148);">
+      <blockquote class="blockquote mb-0">
+        <div class="container containerDiv">
+        <section class="listing" *ngFor="let item of productosPorCategoria[i]">
+            <div class="card mainDiv">
+              <div class="BorderDiv" style="background-color: lemonchiffon">
+              <div class="ImgDiv">
+                <img [src]="item.image"  class="card-img-top listing-photo itemfoto" alt="foto de {{item.title}}">
+              </div>
+              </div>
+              <div class="card-body Div2">
+                <h2 *ngIf="item.title.length > 45; else shortTitle2">
+                  {{ item.title.length > 45 ? (item.title | slice:0:45) + '...' : item.title }}
+                </h2>
+                <ng-template #shortTitle2>
+                  <h2 class="listing-heading"> {{item.title}} </h2>
+                </ng-template>
+                
+                <div class="listing-location" style="display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                flex-wrap: wrap;">
+                 <span class="priceCard"> <i class="bi bi-currency-dollar " style="font-size: 1rem;"></i>{{item.price}}</span>
+                  <a [routerLink]="['/Info', item.id]" style="padding-left: 2px;"><button class="btn seeMoreBtn" style="background: linear-gradient(to right, rgb(196, 131, 131) 1%, rgb(222, 226, 164) 100%); border: 1px solid lightgrey">Ver más</button></a>
+                </div>
+                
+              </div>
+            </div>
+        </section>
+        </div>
+      </blockquote>
+    </div>
+</div>
+</section>
+</section>
+</section>

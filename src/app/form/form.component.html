@@ -1,0 +1,40 @@
+
+    <div class="card mb-12 bg-secondary text-light">
+        <div class="row g-0">
+            <div class="col-md-8 divForm">
+                <div class="card-body ">
+                    <h2 class="card-title">¿Quieres recibir notificaciones?</h2>
+                    <p class="card-text">Llena el siguiente formulario para estar en contacto :)</p>
+                    <form [formGroup]="applyForm" (submit)="submitApplication($event)" data-bs-theme="dark">
+                        <div class="input-group flex-nowrap divInput">
+                          <span class="input-group-text" id="addon-wrapping"><i class="bi bi-at"></i></span>
+                          <input type="email" class="form-control" [ngClass]="{'border-success': applyForm.controls['email'].valid && !applyForm.controls['email'].pristine, 'border-danger': !applyForm.controls['email'].valid && !applyForm.controls['email'].pristine}" placeholder="Correo" aria-label="Correo" aria-describedby="addon-wrapping" formControlName="email" required>
+                        </div>
+                            <div class="ErrorDiv" *ngIf="applyForm.controls['email'].dirty && applyForm.controls['email'].invalid">
+                                <small class="text-danger">Por favor, introduce un correo válido.</small>
+                            </div>
+                        <div class="input-group flex-nowrap divInput">
+                          <span class="input-group-text" id="addon-wrapping"><i class="bi bi-person-circle"></i></span>
+                          <input type="text" class="form-control" [ngClass]="{'border-success': applyForm.controls['firstName'].valid && !applyForm.controls['firstName'].pristine, 'border-danger': !applyForm.controls['firstName'].valid && !applyForm.controls['firstName'].pristine}" placeholder="Nombre" aria-label="Nombre" aria-describedby="addon-wrapping" formControlName="firstName" required>
+                        </div>
+                            <div class="ErrorDiv" *ngIf="applyForm.controls['firstName'].dirty && applyForm.controls['firstName'].invalid">
+                                <small class="text-danger">Este campo es obligatorio.</small>
+                            </div>
+                        <div class="input-group flex-nowrap divInput">
+                          <span class="input-group-text" id="addon-wrapping"><i class="bi bi-person-circle"></i></span>
+                          <input type="text" class="form-control" [ngClass]="{'border-success': applyForm.controls['lastName'].valid && !applyForm.controls['lastName'].pristine, 'border-danger': !applyForm.controls['lastName'].valid && !applyForm.controls['lastName'].pristine}" placeholder="Apellido" aria-label="Apellido" aria-describedby="addon-wrapping" formControlName="lastName" required>
+                        </div>
+                            <div class="ErrorDiv" *ngIf="applyForm.controls['lastName'].dirty && applyForm.controls['lastName'].invalid">
+                                <small class="text-danger">Este campo es obligatorio.</small>
+                            </div>
+                        <button class="btn BtnForm" [ngClass]="{'btn-success': applyForm.valid, 'btn-danger': !applyForm.valid}" type="submit" [disabled]="!applyForm.valid" type="submit">Enviar datos</button>
+                    </form>
+                      
+                    <p class="card-text"><small class="text-body-secondary">Made by: Erick Daniel Alba Leon <i class="bi bi-c-circle"></i></small></p>
+                </div>
+            </div>
+            <div class="col-md-4 divimgCommerse">
+              <img src="https://th.bing.com/th/id/OIG.ESZMUAMTtUqgZMLNG9ic?w=1024&h=1024&rs=1&pid=ImgDetMain" class="img-fluid rounded-start imgCommerse" alt="...">
+            </div>
+        </div>
+      </div>

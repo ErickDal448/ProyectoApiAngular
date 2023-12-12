@@ -1,0 +1,140 @@
+.background{
+  background: linear-gradient( rgb(54, 69, 77) 70%, lightgrey 100%);
+  height: auto;
+  padding: 2rem 0rem;
+}
+.carousel-inner{
+  height: 17rem;
+}
+
+.priceCarrousel{
+  background-color: red;
+  color: aliceblue;
+  border-radius: 280px;
+  font-size: 25px;
+  padding: 0.75rem;
+}
+.priceCard{
+  background-color: rgb(196, 131, 131);
+  color: aliceblue;
+  border-radius: 280px 0px 0px 280px ;
+  font-size: 15px;
+  padding: 0.5rem;
+  border: 1px solid lightgrey;
+}
+
+.divRate{
+  margin-bottom: 1rem;
+}
+
+.rate{
+  background-image: url(https://dbdzm869oupei.cloudfront.net/img/t-shirts/preview/58367.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+  background-position: center;
+  color: black;
+  font-size: 20px;
+  padding: 0.75rem;
+  position: static;
+}
+
+.mainSec{
+  width: 100%;
+  height: 100%;
+  padding-top: 2rem ;
+}
+
+.containerDiv{
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.mainDiv{
+    display: flex;
+    align-items: center;
+    width: 30rem;
+}
+
+.ImgDiv{
+    width: 46%;
+    padding: .5rem .5rem;
+    margin: .5rem .5rem;
+    border: 4px solid grey;
+    border-radius: 360px ;
+    background-color: aliceblue;
+}
+
+.BorderDiv{
+    border-bottom: 1px solid black;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Div2{
+    width: 100%;
+    height: 17rem;
+    flex-wrap: wrap;
+}
+.card-body{
+    background: rgb(236, 232, 225);
+}
+
+.listing {
+    background: var(--accent-color);
+    border-radius: 30px;
+    padding-bottom: 30px;
+  }
+  .listing-heading {
+    color: var(--primary-color);
+    padding: 10px 20px 0 20px;
+  }
+  .listing-photo {
+    height: 200px;
+    width: 100%;
+    border-radius: 360px;
+  }
+  .listing-location {
+    padding: 10px 20px 20px 20px;
+  }
+  .listing-location::before {
+    content: url("/assets/location-pin.svg") / "";
+  }
+  
+  section.listing a {
+    padding-left: 20px;
+    text-decoration: none;
+    color: var(--primary-color);
+  }
+  section.listing a::after {
+    content: "\203A";
+    margin-left: 5px;
+  }
+
+  .seeMoreBtn{
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  @media screen and (max-width: 490px){
+    .mainDiv{
+        width: 20rem;
+    }
+    .listing-photo{
+        height: 125px;
+    }
+
+  }
+  @media screen and (max-width: 325px){
+    .mainDiv{
+        width: 12rem;
+    }
+    .listing-photo{
+        height: 70px;
+    }
+
+  } 

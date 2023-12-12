@@ -1,0 +1,40 @@
+
+<section class="background" *ngIf="productos.length !== 0">
+  <div style="display: flex;
+  align-items: stretch;
+  justify-content: space-between;">
+  <button class="BtnMove bg-secondary" (click)="navegarAlProductoAnterior()"style="border-radius: 0px 1000px 1000px 0px"><i class="bi bi-arrow-left-circle BtnMovei"></i></button>
+  <section class="MyContainer">
+  <div class="divProducto" *ngIf="productoInfo" >
+  <div class="card mb-6" >
+    <div class="row g-0">
+      <div class="col-md-4 divImage">
+        
+        
+            <img [src]="productoInfo.image" class="img-fluid rounded-start ProductImage" alt="{{ productoInfo.title }}">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h3 class="card-title">{{ productoInfo.title }}</h3>
+              <p class="card-text" style="text-align: justify;">{{ productoInfo.description }}</p>
+              <div class="divRate">
+                <span class="rate" *ngIf="productoInfo; else DecimalValoration">
+                  {{ productoInfo.rating.rate % 1 == 0 ? (productoInfo.rating.rate) + '.0' : productoInfo.rating.rate }}
+                </span>
+                <ng-template #DecimalValoration>
+                  <span class="rate">{{productoInfo.rating.rate}}</span>
+                </ng-template>
+              </div>
+              <p class="card-text"><small class="text-body-secondary">Precio: ${{ productoInfo.price }}</small></p>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  </section>
+  <button class="BtnMove bg-secondary" (click)="navegarAlProductoSiguiente()" style="    border-radius: 1000px 0px 0px 1000px"><i class="bi bi-arrow-right-circle BtnMovei"></i></button>
+  </div>
+  <section class="sectionForm">
+    <app-form></app-form>
+  </section>
+</section>

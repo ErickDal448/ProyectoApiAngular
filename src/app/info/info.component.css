@@ -1,0 +1,95 @@
+.background{
+    background: linear-gradient( rgb(54, 69, 77) 70%, lightgrey 100%);
+    height: 100%;
+    padding: 2rem 0rem 0rem 0rem;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+}
+.MyContainer{
+    margin: 1rem;
+    flex-grow: 1;
+}
+.BtnMovei{
+    font-size: 2.5rem!important;
+    color: aliceblue;
+}
+.divProducto{
+    display: flex;
+    justify-content: center;
+    height: 100%;
+      
+}
+
+.card-body{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.rate{
+    background-image: url(https://dbdzm869oupei.cloudfront.net/img/t-shirts/preview/58367.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+    background-position: center;
+    color: black;
+    font-size: 20px;
+    padding: 0.75rem;
+    position: static;
+  }
+
+.divImage{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.ProductImage{
+    padding: 2rem;
+    height: 20rem;
+    background-size: cover;
+}
+
+.sectionForm{
+    margin-top: 2rem;
+}
+@media screen and (max-width: 770px){
+    .divRate{
+        justify-content: center;
+        display: flex;
+    }
+}
+
+@media screen and (max-width: 490px){
+    .ProductImage{
+        height: 17rem;
+        padding: 0px;
+        background-size: cover;
+    }
+    .MyContainer{
+        margin: 0.5rem;
+    }
+    .BtnMove{
+        height: 5rem;
+    }
+    .BtnMovei{
+        font-size: 1.5rem!important;
+    }
+  }
+  @media screen and (max-width: 325px){
+    .ProductImage{
+        height: 10rem;
+    }
+    .MyContainer{
+        margin: 0.25rem;
+    }
+    .BtnMove{
+        height: 5rem;
+    }
+    .BtnMovei{
+        font-size: 1rem!important;
+    }
+  } 

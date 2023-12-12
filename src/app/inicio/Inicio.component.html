@@ -1,0 +1,77 @@
+
+<div  *ngIf="productos.length == 0" style="width: 100%; height: 100vh; background-color: black;"></div>
+<div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel"  *ngIf="productos.length > 0">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item" *ngFor="let itemcarrousel of productosCarrousel; let i = index" [class.active]="i == 0" style="background-image: url('{{itemcarrousel.image}}');
+    background-size:contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;">
+      <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="var(--bs-secondary-color)"/></svg>
+      <div class="container ">
+        <div class="carousel-caption text-start infoDiv">
+          <div class="divRate">
+            
+            <span class="rate">{{itemcarrousel.rating.rate}}</span>
+          </div>
+          <h1 *ngIf="itemcarrousel.title.length > 35; else shortTitle">
+            {{ itemcarrousel.title.length > 35 ? (itemcarrousel.title | slice:0:35) + '...' : itemcarrousel.title }}
+          </h1>
+          <ng-template #shortTitle>
+          <h1>{{ itemcarrousel.title}}</h1>
+          </ng-template>
+          <span class="priceCarrousel"><i class="bi bi-currency-dollar " style="font-size: 1.7rem;"></i>{{itemcarrousel.price}}</span>
+          <p><a class="btn btn-lg btn-primary" [routerLink]="['/Info', itemcarrousel.id]" target="_blank">Ver más</a></p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<section class="background">
+<section class="mainSec"  *ngIf="productos.length > 0">
+<div class="container containerDiv" >
+
+  <section class="listing" *ngFor="let item of productos">
+      <div class="card mainDiv">
+        <div class="BorderDiv" style="background-color: lemonchiffon">
+        <div class="ImgDiv">
+          <img [src]="item.image"  class="card-img-top listing-photo itemfoto" alt="foto de {{item.title}}">
+        </div>
+        </div>
+        <div class="card-body Div2">
+          <h1 class="listing-heading">{{item.id}} </h1>
+          <h2 *ngIf="item.title.length > 45; else shortTitle2">
+            {{ item.title.length > 45 ? (item.title | slice:0:45) + '...' : item.title }}
+          </h2>
+          <ng-template #shortTitle2>
+            <h2 class="listing-heading"> {{item.title}} </h2>
+          </ng-template>
+          
+          <div class="listing-location" style="display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          flex-wrap: wrap;">
+            <span class="priceCard"> <i class="bi bi-currency-dollar " style="font-size: 1rem;"></i>{{item.price}}</span>
+            <a [routerLink]="['/Info', item.id]" style="padding-left: 2px;"><button class="btn seeMoreBtn" style="background: linear-gradient(to right, rgb(196, 131, 131) 1%, rgb(222, 226, 164) 100%); border: 1px solid lightgrey">Ver más</button></a>
+          </div>
+          
+        </div>
+      </div>
+  </section>
+</div>
+</section>
+</section>

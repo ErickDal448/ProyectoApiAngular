@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-secondary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" [routerLink]="['/']">
+        <div class="logoDiv"> 
+          <img src="https://th.bing.com/th/id/OIG.zC_WW9wxQTORBNBR3SXx?pid=ImgGn" alt="" style="width: 3rem;" class="logoImage">
+        </div>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['/']" >Inicio</a>
+          </li>
+          <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link" [routerLink]="['/Categorias']">Categorias</a>
+          </li>
+        </ul>
+        <form class="d-flex formSearch" role="search" (ngSubmit)="buscar(busqueda)">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="busqueda" name="busqueda">
+            <button class="btn btn-success" type="submit">Buscar</button>
+          </form>
+      </div>
+    </div>
+</nav>
+
+<div style="background-color: rgb(54, 69, 77);" *ngIf="filtro.length > 0">
+  <div class="card" data-bs-theme="dark">
+    <div class="card-header">
+      Buscando "{{busqueda}}" se encontro...
+    </div>
+    <div class="card-body" >
+      <blockquote class="blockquote mb-0">
+        <!-- Elementos de la busqueda -->
+        <section class="FindSpace">
+            <div class="card mb-3" style="max-width: 540px; margin: 1rem; background-color: rgb(54, 69, 77);" *ngFor="let item of filtro">
+                <div class="row g-0">
+                  <div class="col-md-4" style="display: flex; justify-content: center;">
+                    <div class="ImgDiv">
+                        <img [src]="item.image" class="img-fluid rounded-start itemImg" alt="...">
+                    </div>
+                  </div>
+                  <div class="col-md-8" style="display: flex;
+                  flex-direction: column;
+                  align-items: stretch;
+                  justify-content: space-around;">
+                    <div class="card-body" style="flex: none; padding-bottom: 0px;">
+                      <p class="card-text">{{item.title}}</p>
+                      <p class="card-text"><small class="text-body-secondary">{{item.price}}</small></p>
+                    </div>
+                    <div class="card-body" style="flex: none;padding-bottom: 0px;">
+                        <a [routerLink]="['/Info', item.id]" style="padding-left: 2px;"><button class="btn seeMoreBtn" style="background: linear-gradient(to right, rgb(196, 131, 131) 1%, rgb(222, 226, 164) 100%); border: 1px solid lightgrey; color: black;">Ver más</button></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </section>
+      </blockquote>
+    </div>
+  </div>
+</div>
